@@ -26,6 +26,8 @@
 		]
 	},
 	"mixins": [
+		"weaponized.client.mixins.json",
+		"weaponized.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
