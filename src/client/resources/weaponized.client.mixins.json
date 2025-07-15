@@ -3,9 +3,7 @@
   "package": "com.weaponized.mixin.client",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "ItemRendererAccessor",
-    "ItemRendererMixin",
-    "ModelLoaderMixin"
+    "ItemRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
