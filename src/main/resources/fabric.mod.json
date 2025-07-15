@@ -26,19 +26,11 @@
 		]
 	},
 	"mixins": [
-		"weaponized.mixins.json",
-		{
-			"config": "weaponized.client.mixins.json",
-			"environment": "client"
-		}
 	],
 	"depends": {
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }
