@@ -1,6 +1,7 @@
 package com.weaponized;
 
 import com.weaponized.core.WeaponizedItemGroups;
+import com.weaponized.core.WeaponizedItems;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.util.Identifier;
@@ -20,5 +21,6 @@ public class Weaponized implements ModInitializer {
 	public void onInitialize() {
 
 		WeaponizedItemGroups.initialize();
+		WeaponizedItems.registerModItems();
 	}
 }

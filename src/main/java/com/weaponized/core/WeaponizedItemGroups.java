@@ -15,9 +15,9 @@ public class WeaponizedItemGroups {
     public static final ItemGroup WEAPONIZED_ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Weaponized.MOD_ID, "main"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.main"))
-                    .icon(() -> new ItemStack(Items.ACACIA_BOAT)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(WeaponizedItems.CARRION_CLEAVER)).entries((displayContext, entries) -> {
 
-                        entries.add(Items.DIAMOND);
+                entries.add(WeaponizedItems.CARRION_CLEAVER);
 
 
                     }).build());

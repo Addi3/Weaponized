@@ -18,5 +18,6 @@ public class WeaponizedEnglishLangProvider extends FabricLanguageProvider {
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
 translationBuilder.add("itemgroup.main","Weaponized");
+translationBuilder.add("item.weaponized.carrion_cleaver","Carrion Cleaver");
     }
 }
