@@ -1,5 +1,6 @@
 package com.weaponized.core.items;
 
+import com.weaponized.Weaponized;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.decoration.ArmorStandEntity;
@@ -28,9 +29,16 @@ public interface ParticleDrippingItem {
             double rotatedX = offsetX * Math.cos(-yaw) - offsetZ * Math.sin(-yaw);
             double rotatedZ = offsetX * Math.sin(-yaw) + offsetZ * Math.cos(-yaw);
 
-            // TODO add a custom blood particle
+
             world.addParticle(
-                    ParticleTypes.ASH, // Replace with your "blood" particle if custom
+                    Weaponized.BLOOD_PARTICLE,
+                    entity.getX() - rotatedX,
+                    entity.getY() + entity.getStandingEyeHeight() + offsetY,
+                    entity.getZ() + rotatedZ,
+                    0.0, -0.1, 0.0
+            );
+            world.addParticle(
+                    Weaponized.BLOOD_FLOOR_PARTICLE,
                     entity.getX() - rotatedX,
                     entity.getY() + entity.getStandingEyeHeight() + offsetY,
                     entity.getZ() + rotatedZ,
