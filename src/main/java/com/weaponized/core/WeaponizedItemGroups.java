@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 
 public class WeaponizedItemGroups {
     public static final ItemGroup WEAPONIZED_ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(Weaponized.MOD_ID, "main"),
+            Weaponized.id("main"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.main"))
                     .icon(() -> new ItemStack(WeaponizedItems.CARRION_CLEAVER)).entries((displayContext, entries) -> {
 

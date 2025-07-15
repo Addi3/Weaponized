@@ -1,7 +1,7 @@
 package com.weaponized.core;
 
 import com.weaponized.Weaponized;
-import com.weaponized.core.Items.CarrionCleaver;
+import com.weaponized.core.items.CarrionCleaverItem;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -11,19 +11,18 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class WeaponizedItems {
-    public static final Item CARRION_CLEAVER = registerItem("carrion_cleaver", new CarrionCleaver());
+    public static final Item CARRION_CLEAVER = registerItem("carrion_cleaver", new CarrionCleaverItem(WeaponizedToolMaterials.CARRION_CLEAVER, 5,
+            4.0F, new Item.Settings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
 
     }
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(Weaponized.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, Weaponized.id(name), item);
     }
 
     public static void registerModItems() {
-        Weaponized.LOGGER.info("Registering Mod Items for " + Weaponized.MOD_ID);
-
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(WeaponizedItems::addItemsToIngredientItemGroup);
     }
 }
