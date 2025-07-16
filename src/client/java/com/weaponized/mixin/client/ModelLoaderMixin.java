@@ -28,5 +28,6 @@ public abstract class ModelLoaderMixin {
     @Inject(method = "<init>", at = @ At(value = "INVOKE", target = "Lnet/minecraft/client/render/model/ModelLoader;addModel(Lnet/minecraft/client/util/ModelIdentifier;)V", ordinal = 3, shift = At.Shift.AFTER))
     public void weaponized$addItemModel(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
         this.addModel(new ModelIdentifier(Weaponized.MOD_ID, "handheld_carrion_cleaver", "inventory"));
+        this.addModel(new ModelIdentifier(Weaponized.MOD_ID, "handheld_carrion_scythe", "inventory"));
     }
 }

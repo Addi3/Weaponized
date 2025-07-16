@@ -18,6 +18,7 @@ public class WeaponizedItemGroups {
                     .icon(() -> new ItemStack(WeaponizedItems.CARRION_CLEAVER)).entries((displayContext, entries) -> {
 
                 entries.add(WeaponizedItems.CARRION_CLEAVER);
+                entries.add(WeaponizedItems.CARRION_SCYTHE);
 
 
                     }).build());

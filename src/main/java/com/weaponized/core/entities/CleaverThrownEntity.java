@@ -25,6 +25,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 
 public class CleaverThrownEntity extends PersistentProjectileEntity {
@@ -156,7 +157,7 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
                 }
                 this.setVelocity(this.getVelocity().multiply(0.95).add(vec3d.normalize().multiply(speedMultiplier)));
                 if (this.returnTimer == 0) {
-                    this.playSound(SoundEvents.ITEM_TRIDENT_RETURN, 8.0F, 1.7F);
+                    this.playSound(WeaponizedSounds.CLEAVER_THROW, 1.0F, 1.0F);
                 }
                 ++this.returnTimer;
             }

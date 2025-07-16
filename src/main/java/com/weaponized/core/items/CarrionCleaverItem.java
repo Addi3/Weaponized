@@ -22,7 +22,7 @@ import java.util.List;
 
 // TODO: implement Joyeuxlib ItemHitSound
 
-public class CarrionCleaverItem extends BaseThrownWeaponItem implements ParticleDrippingItem {
+public class CarrionCleaverItem extends BaseThrownWeaponItem implements ParticleDrippingItem, DifferingHandModelItem {
     public CarrionCleaverItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
