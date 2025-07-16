@@ -32,10 +32,10 @@ bin/
 
 run/
 
+# java
+
 src/main/generated/.cache
 src/main/generated
-
-# java
 
 hs_err_*.log
 replay_*.log
