@@ -16,6 +16,9 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
+	maven {
+		url "https://jitpack.io"
+	}
 }
 
 loom {
@@ -44,14 +47,27 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	
+
+	// Joyeux Lib
+	modImplementation ("com.github.Addi3:Joyeux-Lib:${project.joyeux_lib_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+	}
 }
 
+
 processResources {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE // Exclude duplicate files, I don"t why this even works
 	inputs.property "version", project.version
+	inputs.property "minecraft_version", project.minecraft_version
+	inputs.property "loader_version", project.loader_version
+	inputs.property "joyeux_lib_version", project.joyeux_lib_version
+	filteringCharset "UTF-8"
 
 	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
+		expand "version": project.version,
+				"minecraft_version": project.minecraft_version,
+				"loader_version": project.loader_version,
+				"joyeux_lib_version": project.joyeux_lib_version
 	}
 }
 
