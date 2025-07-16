@@ -133,7 +133,7 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
         }
 
         Entity entity = this.getOwner();
-        boolean shouldReturnQuickly = this.age > 30 && !this.inGround; // 6 seconds at 20 ticks/sec
+        boolean shouldReturnQuickly = this.age > 3 && !this.inGround; // 6 seconds at 20 ticks/sec
 
         // Sync tracked inGround value
         this.setInGround(this.inGround);
