@@ -1,5 +1,6 @@
 package com.weaponized;
 
+import com.weaponized.core.WeaponizedEntityTypes;
 import com.weaponized.core.WeaponizedItemGroups;
 import com.weaponized.core.WeaponizedItems;
 import net.fabricmc.api.ModInitializer;
@@ -39,6 +40,7 @@ public class Weaponized implements ModInitializer {
 	public void onInitialize() {
 
 		WeaponizedItemGroups.initialize();
+		WeaponizedEntityTypes.initialize();
 		WeaponizedItems.registerModItems();
 		registerParticles();
 		}

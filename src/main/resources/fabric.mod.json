@@ -22,7 +22,7 @@
 			"com.weaponized.WeaponizedClient"
 		],
 		"fabric-datagen": [
-			"com.weaponized.WeaponizedDataGenerator"
+			"com.weaponized.datagen.WeaponizedDataGenerator"
 		]
 	},
 	"mixins": [

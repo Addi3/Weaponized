@@ -1,4 +1,4 @@
-package com.weaponized.datagenproviders;
+package com.weaponized.datagen.providers;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;

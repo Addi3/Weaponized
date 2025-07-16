@@ -1,7 +1,7 @@
-package com.weaponized;
+package com.weaponized.datagen;
 
-import com.weaponized.datagenproviders.WeaponizedEnglishLangProvider;
-import com.weaponized.datagenproviders.WeaponizedModelProvider;
+import com.weaponized.datagen.providers.WeaponizedEnglishLangProvider;
+import com.weaponized.datagen.providers.WeaponizedModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 

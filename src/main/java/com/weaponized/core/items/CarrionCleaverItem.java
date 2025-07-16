@@ -1,13 +1,14 @@
 package com.weaponized.core.items;
 
+import com.weaponized.core.WeaponizedItems;
 import com.weaponized.core.WeaponizedToolMaterials;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.SwordItem;
-import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.*;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
-public class CarrionCleaverItem extends SwordItem implements ParticleDrippingItem {
+public class CarrionCleaverItem extends BaseThrownWeaponItem implements ParticleDrippingItem {
     public CarrionCleaverItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
@@ -20,8 +21,18 @@ public class CarrionCleaverItem extends SwordItem implements ParticleDrippingIte
     @Override
     public float getAttackDamage() {
         if (getMaterial() == WeaponizedToolMaterials.CARRION_CLEAVER) {
-            return 7.0F; // Custom attack damage for Carrion Cleaver - TEMPORARY WHILE WE ADD TOOLSET/ARMORSET BUFFS
+            return 7.0F;
         }
         return super.getAttackDamage();
+    }
+
+    @Override
+    public Item getDefaultItem() {
+        return WeaponizedItems.CARRION_CLEAVER;
+    }
+
+    @Override
+    public SoundEvent getDefaultSound() {
+        return SoundEvents.ITEM_TRIDENT_THROW;
     }
 }
