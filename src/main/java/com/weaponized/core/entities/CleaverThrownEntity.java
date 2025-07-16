@@ -105,7 +105,7 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
         DamageSource damageSource = this.getDamageSources().thrown(this, entity2 == null ? this : entity2);
         this.dealtDamage = true;
         SoundEvent soundEvent = SoundEvents.ITEM_TRIDENT_HIT;
-        if (entity.damage(damageSource, 4.0f)) {
+        if (entity.damage(damageSource, 7.0f)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }
@@ -128,12 +128,12 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
 
     @Override
     public void tick() {
-        if (this.inGroundTime > 9) {
+        if (this.inGroundTime > 4) {
             this.dealtDamage = true;
         }
 
         Entity entity = this.getOwner();
-        boolean shouldReturnQuickly = this.age > 3 && !this.inGround; // 6 seconds at 20 ticks/sec
+        boolean shouldReturnQuickly = this.age > 30 && !this.inGround; // 6 seconds at 20 ticks/sec
 
         // Sync tracked inGround value
         this.setInGround(this.inGround);

@@ -3,6 +3,7 @@ package com.weaponized;
 import com.weaponized.core.WeaponizedEntityTypes;
 import com.weaponized.core.WeaponizedItemGroups;
 import com.weaponized.core.WeaponizedItems;
+import com.weaponized.core.WeaponizedSounds;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
@@ -24,11 +25,9 @@ public class Weaponized implements ModInitializer {
 		return new Identifier(MOD_ID, path);
 	}
 
-	// This DefaultParticleType gets called when you want to use your particle in code.
+
 	public static final DefaultParticleType BLOOD_PARTICLE = FabricParticleTypes.simple();
 	public static final DefaultParticleType BLOOD_FLOOR_PARTICLE = FabricParticleTypes.simple();
-
-	// Register our custom particle type in the mod initializer.
 
 
 	public void registerParticles() {
@@ -42,6 +41,7 @@ public class Weaponized implements ModInitializer {
 		WeaponizedItemGroups.initialize();
 		WeaponizedEntityTypes.initialize();
 		WeaponizedItems.registerModItems();
+		WeaponizedSounds.init();
 		registerParticles();
 		}
 }
