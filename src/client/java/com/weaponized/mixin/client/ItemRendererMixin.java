@@ -24,6 +24,12 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/**
+ * Mixin for the ItemRenderer to handle custom rendering of the Carrion Cleaver item.
+ * This mixin modifies the model used for the Carrion Cleaver when it is held in hand.
+ * @author Loqor
+ * @license GNU General Public License v3.0
+ */
 @Mixin(ItemRenderer.class)
 public class ItemRendererMixin {
 

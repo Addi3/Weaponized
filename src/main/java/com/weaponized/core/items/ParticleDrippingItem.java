@@ -8,6 +8,10 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+/**
+ * @author Loqor
+ * @license GNU General Public License v3.0
+ */
 public interface ParticleDrippingItem {
 
     default void particleInventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {

@@ -12,6 +12,10 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
+/**
+ * @author Loqor
+ * @license GNU General Public License v3.0
+ */
 public abstract class BaseThrownWeaponItem extends SwordItem {
     public BaseThrownWeaponItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);

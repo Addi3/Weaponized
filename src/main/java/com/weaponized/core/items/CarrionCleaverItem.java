@@ -8,6 +8,10 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
+/**
+ * @author Loqor
+ * @license GNU General Public License v3.0
+ */
 public class CarrionCleaverItem extends BaseThrownWeaponItem implements ParticleDrippingItem {
     public CarrionCleaverItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);

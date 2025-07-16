@@ -1,6 +1,5 @@
 package com.weaponized.render;
 
-import com.weaponized.core.WeaponizedItems;
 import com.weaponized.core.entities.CleaverThrownEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -14,12 +13,14 @@ import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.texture.SpriteAtlasTexture;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.FlyingItemEntity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RotationAxis;
 
+/**
+ * @author Loqor
+ * @license GNU General Public License v3.0
+ */
 @Environment(value=EnvType.CLIENT)
 public class CleaverThrownItemRenderer<T extends Entity>
         extends EntityRenderer<T> {
