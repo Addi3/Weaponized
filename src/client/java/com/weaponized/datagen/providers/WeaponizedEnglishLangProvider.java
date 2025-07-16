@@ -16,6 +16,6 @@ public class WeaponizedEnglishLangProvider extends FabricLanguageProvider {
     public void generateTranslations(TranslationBuilder translationBuilder) {
         translationBuilder.add("itemgroup.main","Weaponized");
         translationBuilder.add("item.weaponized.carrion_cleaver","Carrion Cleaver");
-        translationBuilder.add("item.weaponized.carrion_cleaver.tooltip", "§5An old reliable cleaver, made of flesh and bones.");
+        translationBuilder.add("item.weaponized.carrion_cleaver.tooltip", "An old reliable cleaver, made of flesh and bones.");
     }
 }
