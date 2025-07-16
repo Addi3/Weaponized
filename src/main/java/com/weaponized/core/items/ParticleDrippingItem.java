@@ -13,10 +13,9 @@ public interface ParticleDrippingItem {
 
     default void particleInventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         // Example offsets (customize as needed)
-        
-        double offsetX = 0.4;
+        double offsetX = -0.4;
         double offsetY = -0.9;
-        double offsetZ = 1.0;
+        double offsetZ = 0.5;
 
         // Get entity yaw in radian
 
