@@ -157,7 +157,7 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
                 }
                 this.setVelocity(this.getVelocity().multiply(0.95).add(vec3d.normalize().multiply(speedMultiplier)));
                 if (this.returnTimer == 0) {
-                    this.playSound(WeaponizedSounds.CLEAVER_THROW, 1.0F, 1.0F);
+                    this.playSound(SoundEvents.ITEM_TRIDENT_THROW,8.0f,1.4f);
                 }
                 ++this.returnTimer;
             }
