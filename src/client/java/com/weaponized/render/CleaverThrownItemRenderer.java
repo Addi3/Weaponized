@@ -24,7 +24,7 @@ import net.minecraft.util.math.RotationAxis;
 @Environment(value=EnvType.CLIENT)
 public class CleaverThrownItemRenderer<T extends Entity>
         extends EntityRenderer<T> {
-    private static final float MIN_DISTANCE = 12.25f;
+    private static final float MIN_DISTANCE = 10.25f;
     private final ItemRenderer itemRenderer;
     private final float scale;
     private final boolean lit;
@@ -66,7 +66,7 @@ public class CleaverThrownItemRenderer<T extends Entity>
             matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(sinAngle));
             matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(spinAngle));
         }
-        matrices.translate(0.6, 1.6, -0.5);
+        matrices.translate(0.1, 1.3, -0.3);
 
         this.itemRenderer.renderItem(
                 flyingItem.asItemStack(),
