@@ -50,6 +50,6 @@ public abstract class BaseThrownWeaponItem extends SwordItem {
     }
 
     public SoundEvent getDefaultSound() {
-        return SoundEvents.ENTITY_SNOWBALL_THROW;
+        return SoundEvents.ITEM_TRIDENT_THROW;
     }
 }

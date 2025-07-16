@@ -11,7 +11,6 @@ public class WeaponizedSounds {
 //cleaver sounds
     public static final SoundEvent CLEAVER_THROW = register("cleaver/throw");
     public static final SoundEvent CLEAVER_HIT = register("cleaver/hit");
-    public static final SoundEvent CLEAVER_HIT_GROUND = register("cleaver/hit_ground");
 
 
 

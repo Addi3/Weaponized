@@ -59,6 +59,6 @@ public class CarrionCleaverItem extends BaseThrownWeaponItem implements Particle
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
 
-        tooltip.add(Text.translatable("item.weaponized.carrion_cleaver.tooltip").formatted(Formatting.ITALIC, Formatting.BLUE));
+        tooltip.add(Text.translatable("item.weaponized.carrion_cleaver.tooltip").formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
     }
 }
