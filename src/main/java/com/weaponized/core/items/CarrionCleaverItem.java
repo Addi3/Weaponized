@@ -2,11 +2,17 @@ package com.weaponized.core.items;
 
 import com.weaponized.core.WeaponizedItems;
 import com.weaponized.core.WeaponizedToolMaterials;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 /**
  * @author Loqor
@@ -38,5 +44,12 @@ public class CarrionCleaverItem extends BaseThrownWeaponItem implements Particle
     @Override
     public SoundEvent getDefaultSound() {
         return SoundEvents.ITEM_TRIDENT_THROW;
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        super.appendTooltip(stack, world, tooltip, context);
+
+        tooltip.add(Text.translatable("item.weaponized.carrion_cleaver.tooltip").formatted(Formatting.ITALIC, Formatting.BLUE));
     }
 }

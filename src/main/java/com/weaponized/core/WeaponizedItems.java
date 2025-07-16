@@ -11,8 +11,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class WeaponizedItems {
-    public static final Item CARRION_CLEAVER = registerItem("carrion_cleaver", new CarrionCleaverItem(WeaponizedToolMaterials.CARRION_CLEAVER, 5,
-            4.0F, new Item.Settings()));
+    public static final Item CARRION_CLEAVER = registerItem("carrion_cleaver", new CarrionCleaverItem(WeaponizedToolMaterials.CARRION_CLEAVER, 7,
+            1.8F, new Item.Settings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
 

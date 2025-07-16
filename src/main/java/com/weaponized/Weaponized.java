@@ -44,4 +44,4 @@ public class Weaponized implements ModInitializer {
 		WeaponizedItems.registerModItems();
 		registerParticles();
 		}
-	}
+}

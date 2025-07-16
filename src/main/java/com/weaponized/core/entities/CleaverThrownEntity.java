@@ -102,10 +102,10 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
         }
 
         Entity entity2 = this.getOwner();
-        DamageSource damageSource = this.getDamageSources().trident(this, (Entity)(entity2 == null ? this : entity2));
+        DamageSource damageSource = this.getDamageSources().thrown(this, entity2 == null ? this : entity2);
         this.dealtDamage = true;
         SoundEvent soundEvent = SoundEvents.ITEM_TRIDENT_HIT;
-        if (entity.damage(damageSource, f)) {
+        if (entity.damage(damageSource, 7.0f)) {
             if (entity.getType() == EntityType.ENDERMAN) {
                 return;
             }
