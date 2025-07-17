@@ -55,7 +55,7 @@ public interface ParticleDrippingItem {
 
 
             for (int i = 0; i < 2; i++) {
-                if (world.random.nextFloat() < 0.7f) { // 70% chance per particle
+                if (world.random.nextFloat() < 0.1f) { // 70% chance per particle
                     world.addParticle(
                             Weaponized.BLOOD_PARTICLE,
                             entity.getX() - rotatedX + (world.random.nextDouble() - 0.5) * 0.1,
