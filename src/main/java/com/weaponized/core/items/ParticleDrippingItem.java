@@ -35,7 +35,7 @@ public interface ParticleDrippingItem {
 
                 if (player.getMainHandStack() == stack) {
                     offsetX = 0.4;
-                    offsetY = -0.9:
+                    offsetY = -0.9;
                     offsetZ = 0.6;
                 }
 
