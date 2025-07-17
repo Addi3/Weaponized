@@ -1,5 +1,6 @@
 package com.weaponized.core.items;
 
+import com.weaponized.core.WeaponizedSounds;
 import com.weaponized.core.entities.CleaverThrownEntity;
 import net.minecraft.entity.player.ItemCooldownManager;
 import net.minecraft.entity.player.PlayerEntity;
@@ -50,6 +51,6 @@ public abstract class BaseThrownWeaponItem extends AxeItem {
     }
 
     public SoundEvent getDefaultSound() {
-        return SoundEvents.ITEM_TRIDENT_THROW;
+        return WeaponizedSounds.CLEAVER_THROW;
     }
 }
