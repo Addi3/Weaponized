@@ -34,6 +34,7 @@
   Links
 </h2>
 
+### - [Website](https://joyeux-info.carrd.co/#)
 ### - [Modrinth](https://modrinth.com/project/weaponized-mod)
 ### - [Github](https://github.com/Addi3/Weaponized)
 ### - [Discord Server](https://discord.gg/5JDKuzarcS)
