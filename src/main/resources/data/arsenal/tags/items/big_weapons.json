@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "weaponized:carrion_cleaver"
+    "weaponized:carrion_cleaver",
+    "weaponized:carrion_scythe"
   ]
 }

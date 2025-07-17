@@ -24,6 +24,7 @@ public class WeaponizedDataGenerator implements DataGeneratorEntrypoint {
 		JoyeuxLibEnglishLangProvider joyENUSLang = new JoyeuxLibEnglishLangProvider(output);
 		joyENUSLang.addTranslation("itemgroup.main","Weaponized");
 		joyENUSLang.addTranslation("item.weaponized.carrion_cleaver","Carrion Cleaver");
+		joyENUSLang.addTranslation("item.weaponized.carrion_scythe","Carrion Scythe");
 		joyENUSLang.addTranslation("item.weaponized.carrion_cleaver.tooltip", "An old reliable cleaver, made of flesh and bones.");
 		joyENUSLang.addTranslation("achievement.weaponized.title.root", "Flesh and Bones!");
 		joyENUSLang.addTranslation("achievement.weaponized.description.root", "Obtain an old cleaver.");
