@@ -2,8 +2,6 @@ package com.weaponized.datagen;
 
 import com.joyeuxlib.datagenproviders.JoyeuxLibEnglishLangProvider;
 import com.joyeuxlib.datagenproviders.JoyeuxLibSoundProvider;
-import com.weaponized.Weaponized;
-import com.weaponized.core.WeaponizedSounds;
 import com.weaponized.datagen.providers.WeaponizedAchievementProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
