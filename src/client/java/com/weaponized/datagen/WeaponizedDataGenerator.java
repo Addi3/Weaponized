@@ -18,10 +18,10 @@ public class WeaponizedDataGenerator implements DataGeneratorEntrypoint {
 	}
 
 	public JoyeuxLibEnglishLangProvider englishTranslationsProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-		JoyeuxLibEnglishLangProvider joyENUSLang = new JoyeuxLibEnglishLangProvider(output, registriesFuture);
-		joyENUSLang.add("itemgroup.main","Weaponized");
-		joyENUSLang.add("item.weaponized.carrion_cleaver","Carrion Cleaver");
-		joyENUSLang.add("item.weaponized.carrion_cleaver.tooltip", "An old reliable cleaver, made of flesh and bones.");
+		JoyeuxLibEnglishLangProvider joyENUSLang = new JoyeuxLibEnglishLangProvider(output);
+		joyENUSLang.addTranslation("itemgroup.main","Weaponized");
+		joyENUSLang.addTranslation("item.weaponized.carrion_cleaver","Carrion Cleaver");
+		joyENUSLang.addTranslation("item.weaponized.carrion_cleaver.tooltip", "An old reliable cleaver, made of flesh and bones.");
 		return joyENUSLang;
 	}
 }

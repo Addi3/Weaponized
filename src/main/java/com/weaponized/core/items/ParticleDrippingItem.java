@@ -54,13 +54,13 @@ public interface ParticleDrippingItem {
             double rotatedZ = offsetX * Math.sin(-yaw) + offsetZ * Math.cos(-yaw);
 
 
-            {
-                for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 2; i++) {
+                if (world.random.nextFloat() < 0.7f) { // 70% chance per particle
                     world.addParticle(
                             Weaponized.BLOOD_PARTICLE,
-                            entity.getX() - rotatedX,
+                            entity.getX() - rotatedX + (world.random.nextDouble() - 0.5) * 0.1,
                             entity.getY() + entity.getStandingEyeHeight() + offsetY,
-                            entity.getZ() + rotatedZ,
+                            entity.getZ() + rotatedZ + (world.random.nextDouble() - 0.5) * 0.1,
                             0.0, -0.1, 0.0
                     );
                 }
@@ -68,13 +68,15 @@ public interface ParticleDrippingItem {
 
 
             for (int i = 0; i < 0.5f; i++) {
-                world.addParticle(
-                        Weaponized.BLOOD_FLOOR_PARTICLE,
-                        entity.getX() - rotatedX,
-                        entity.getY() + entity.getStandingEyeHeight() + bloodFloorOffsetY,  // Lower Y position
-                        entity.getZ() + rotatedZ,
-                        0.0, -0.1, 0.0
-                );
+                if (world.getTime() % 20 == 0 && world.random.nextFloat() < 0.1f) { // once per second, 10% chance
+                    world.addParticle(
+                            Weaponized.BLOOD_FLOOR_PARTICLE,
+                            entity.getX() - rotatedX + (world.random.nextDouble() - 0.5) * 0.2,
+                            entity.getY() + entity.getStandingEyeHeight() + bloodFloorOffsetY,
+                            entity.getZ() + rotatedZ + (world.random.nextDouble() - 0.5) * 0.2,
+                            0.0, -0.1, 0.0
+                    );
+                }
             }
         }
     }
