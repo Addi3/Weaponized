@@ -134,12 +134,12 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
         }
 
         Entity entity = this.getOwner();
-        boolean shouldReturnQuickly = this.age > 4 && !this.inGround; // 6 seconds at 20 ticks/sec
+        boolean shouldReturnQuickly = this.age > 4 && !this.isInGroundTracked(); // 6 seconds at 20 ticks/sec
 
         // Sync tracked inGround value
         this.setInGround(this.inGround);
 
-        if ((this.dealtDamage || this.isNoClip() || shouldReturnQuickly) && entity != null && !this.inGround) {
+        if ((this.dealtDamage || this.isNoClip() || shouldReturnQuickly) && entity != null && !this.isInGroundTracked()) {
             if (!this.isOwnerAlive()) {
                 if (!this.getWorld().isClient && this.pickupType == PickupPermission.ALLOWED) {
                     this.dropStack(this.asItemStack(), 0.1F);
@@ -157,7 +157,7 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
                 }
                 this.setVelocity(this.getVelocity().multiply(0.95).add(vec3d.normalize().multiply(speedMultiplier)));
                 if (this.returnTimer == 0) {
-                    this.playSound(SoundEvents.ITEM_TRIDENT_THROW,8.0f,1.4f);
+                    this.playSound(SoundEvents.ITEM_TRIDENT_RETURN,8.0f,1.4f);
                 }
                 ++this.returnTimer;
             }
@@ -191,7 +191,7 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
     }
 
     protected boolean tryPickup(PlayerEntity player) {
-        return this.inGround && super.tryPickup(player) || this.isNoClip() && this.isOwner(player) && player.getInventory().insertStack(this.asItemStack());
+        return this.isInGroundTracked() && super.tryPickup(player) || (this.isNoClip() && this.isOwner(player) && (player.isCreative() || player.getInventory().insertStack(this.asItemStack())));
     }
 
     protected SoundEvent getHitSound() {
@@ -200,7 +200,13 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
 
     public void onPlayerCollision(PlayerEntity player) {
         if (this.isOwner(player) || this.getOwner() == null) {
-            super.onPlayerCollision(player);
+            if (!this.getWorld().isClient && (this.isInGroundTracked() || this.isNoClip()) && this.shake <= 0) {
+                if (this.tryPickup(player)) {
+                    if (player.isCreative()) player.sendPickup(this, 1);
+                    this.discard();
+                }
+
+            }
         }
 
     }
