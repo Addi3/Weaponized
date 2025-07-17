@@ -190,25 +190,41 @@ public class CleaverThrownEntity extends PersistentProjectileEntity {
         return this.dealtDamage ? null : super.getEntityCollision(currentPosition, nextPosition);
     }
 
+    @Override
     protected boolean tryPickup(PlayerEntity player) {
-        return this.isInGroundTracked() && super.tryPickup(player) || (this.isNoClip() && this.isOwner(player) && (player.isCreative() || player.getInventory().insertStack(this.asItemStack())));
+        boolean bl = switch (this.pickupType) {
+            case ALLOWED -> {
+                boolean isFull = player.getInventory().getEmptySlot() == -1;
+                boolean inserted = !player.isCreative() && !isFull && player.getInventory().insertStack(this.asItemStack());
+                if (!inserted && !player.isCreative() && !this.isRemoved() && !isFull) {
+                    this.dropStack(this.asItemStack(), 0.1F);
+                    this.discard();
+                }
+                yield inserted;
+            }
+            case CREATIVE_ONLY -> player.getAbilities().creativeMode;
+            default -> false;
+        };
+        // In creative mode, allow pickup for discard logic, but don't insert into inventory
+        return this.isInGroundTracked() && (bl || player.isCreative()) || (this.isNoClip() && this.isOwner(player));
     }
+
 
     protected SoundEvent getHitSound() {
         return WeaponizedSounds.CLEAVER_HIT;
     }
 
     public void onPlayerCollision(PlayerEntity player) {
-        if (this.isOwner(player) || this.getOwner() == null) {
-            if (!this.getWorld().isClient && (this.isInGroundTracked() || this.isNoClip()) && this.shake <= 0) {
+        if ((this.isOwner(player) || this.getOwner() == null) && !this.getWorld().isClient) {
+            if ((this.isInGroundTracked() || this.isNoClip()) && this.shake <= 0) {
                 if (this.tryPickup(player)) {
-                    if (player.isCreative()) player.sendPickup(this, 1);
+                    /*if (!player.isCreative()) {
+                        player.sendPickup(this, 1);
+                    }*/
                     this.discard();
                 }
-
             }
         }
-
     }
 
     public void readCustomDataFromNbt(NbtCompound nbt) {

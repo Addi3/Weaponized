@@ -1,6 +1,9 @@
 package com.weaponized.datagen;
 
 import com.joyeuxlib.datagenproviders.JoyeuxLibEnglishLangProvider;
+import com.joyeuxlib.datagenproviders.JoyeuxLibSoundProvider;
+import com.weaponized.Weaponized;
+import com.weaponized.core.WeaponizedSounds;
 import com.weaponized.datagen.providers.WeaponizedAchievementProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -15,6 +18,7 @@ public class WeaponizedDataGenerator implements DataGeneratorEntrypoint {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 		pack.addProvider(WeaponizedAchievementProvider::new);
 		pack.addProvider(this::englishTranslationsProvider);
+		pack.addProvider(this::addSounds);
 	}
 
 	public JoyeuxLibEnglishLangProvider englishTranslationsProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
@@ -23,5 +27,12 @@ public class WeaponizedDataGenerator implements DataGeneratorEntrypoint {
 		joyENUSLang.addTranslation("item.weaponized.carrion_cleaver","Carrion Cleaver");
 		joyENUSLang.addTranslation("item.weaponized.carrion_cleaver.tooltip", "An old reliable cleaver, made of flesh and bones.");
 		return joyENUSLang;
+	}
+
+	public JoyeuxLibSoundProvider addSounds(FabricDataOutput output) {
+		JoyeuxLibSoundProvider soundProvider = new JoyeuxLibSoundProvider(output);
+		//soundProvider.addSound("", WeaponizedSounds.CLEAVER_THROW);
+		//soundProvider.addSound("", WeaponizedSounds.CLEAVER_HIT);
+		return soundProvider;
 	}
 }
