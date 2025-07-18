@@ -35,6 +35,7 @@ run/
 # java
 
 src/main/generated/.cache
+src/main/generated
 
 
 hs_err_*.log
