@@ -39,15 +39,17 @@
 
 -------------
 
+-------------
+
 <div style="text-align: center; margin-top: 20px;">
 
   <a href="https://joyeux-info.carrd.co/#" target="_blank" style="margin: 0 1px;">
     <img src="https://raw.githubusercontent.com/Addi3/Joyeux-Lib/refs/heads/master/promo/buttons/joyeux-button.png" alt="Website" title="Website" style="height: 64px;" />
   </a>
-  <a href="https://modrinth.com/project/joyeuxlib" target="_blank" style="margin: 0 1px;">
+  <a href="https://modrinth.com/project/weaponized-mod" target="_blank" style="margin: 0 1px;">
     <img src="https://raw.githubusercontent.com/Addi3/Joyeux-Lib/refs/heads/master/promo/buttons/modrinth-button.png" alt="Modrinth" title="Modrinth" style="height: 64px;" />
   </a>
-  <a href="https://github.com/Addi3/Joyeux-Lib" target="_blank" style="margin: 0 1px;">
+  <a href="https://github.com/Joyeux-official/Weaponized" target="_blank" style="margin: 0 1px;">
     <img src="https://raw.githubusercontent.com/Addi3/Joyeux-Lib/refs/heads/master/promo/buttons/github-button.png" alt="GitHub" title="GitHub" style="height: 64px;" />
   </a>
   <a href="https://discord.gg/5JDKuzarcS" target="_blank" style="margin: 0 1px;">
