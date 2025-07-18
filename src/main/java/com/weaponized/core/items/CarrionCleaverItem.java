@@ -1,5 +1,6 @@
 package com.weaponized.core.items;
 
+import com.joyeuxlib.core.util.JoyeuxLibCustomHitSoundItem;
 import com.weaponized.core.WeaponizedItems;
 import com.weaponized.core.WeaponizedSounds;
 import com.weaponized.core.WeaponizedToolMaterials;
@@ -7,6 +8,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -22,7 +24,7 @@ import java.util.List;
 
 // TODO: implement Joyeuxlib ItemHitSound
 
-public class CarrionCleaverItem extends BaseThrownWeaponItem implements ParticleDrippingItem, DifferingHandModelItem {
+public class CarrionCleaverItem extends BaseThrownWeaponItem implements ParticleDrippingItem, DifferingHandModelItem, JoyeuxLibCustomHitSoundItem {
     public CarrionCleaverItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
         super(toolMaterial, attackDamage, attackSpeed, settings);
     }
@@ -31,6 +33,7 @@ public class CarrionCleaverItem extends BaseThrownWeaponItem implements Particle
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
         ParticleDrippingItem.super.particleInventoryTick(stack, world, entity, slot, selected);
     }
+
 
     @Override
     public float getAttackDamage() {
@@ -50,15 +53,17 @@ public class CarrionCleaverItem extends BaseThrownWeaponItem implements Particle
         return WeaponizedSounds.CLEAVER_THROW;
     }
 
-//    @Override
-//    public void playHitSound(PlayerEntity player) {
-//        player.playSound(WeaponizedSounds.CLEAVER_HIT, 1.0F, (float) (1.0F + player.getRandom().nextGaussian() / 10f));
-//    }
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
 
         tooltip.add(Text.translatable("item.weaponized.carrion_cleaver.tooltip").formatted(Formatting.ITALIC, Formatting.LIGHT_PURPLE));
+    }
+
+
+    @Override
+    public void playHitSound(PlayerEntity player) {
+        player.playSound(WeaponizedSounds.CLEAVER_HIT, 1.0F, (float) (1.0F + player.getRandom().nextGaussian() / 10f));
     }
 }
