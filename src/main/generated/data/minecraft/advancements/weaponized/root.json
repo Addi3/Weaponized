@@ -1,0 +1,39 @@
+{
+  "criteria": {
+    "root": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "weaponized:carrion_cleaver"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/anvil.png",
+    "description": {
+      "translate": "achievement.weaponized.description.root"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "weaponized:carrion_cleaver",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "achievement.weaponized.title.root"
+    }
+  },
+  "requirements": [
+    [
+      "root"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
